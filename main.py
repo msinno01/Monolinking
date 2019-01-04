@@ -6,7 +6,7 @@ import argparse
 import sys
 
 
-if name == "__main__":
+if __name__ == "__main__":
 
     pdbs = None
     depth_files = None
@@ -38,13 +38,16 @@ if name == "__main__":
     if args.depth_files:
         depth_files = args.depth_files
 
+    if args.out:
+        out = args.out[0]
+
     exp_list = Reference(referee).get_residues()
 
     models = {}
 
     if pdbs and not depth_files:
         for pdb in pdbs:
-            depth = Depth(pdb_structure, None,depth_path)
+            depth = Depth(pdb, None,depth_path)
             models[pdb.split('.')[0]] = Score(depth, exp_list).score_mono()
     elif depth_files:
         for depth_file in depth_files:
@@ -53,3 +56,5 @@ if name == "__main__":
     else:
         print("Please specify pdbs or depth files, use -h flag for help.")
         sys.exit()
+
+    Output(models, out)

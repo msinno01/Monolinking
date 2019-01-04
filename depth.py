@@ -38,7 +38,7 @@ class Depth:
         else:
             residues = {}
             print("Reading depth file {0}".format(depth_file))
-            with open(depth_file,'r') as file:
+            with open(depth_file,'r') as f:
                 g = f.read().splitlines()
                 for line in g[1:]:
                     id = int(line.split()[0].split(':')[1])
@@ -49,7 +49,7 @@ class Depth:
             return residues
 
     def get_depth_at_res(self, chain, id):
-         return self.depth_file[chain, id]
+         return self.depth_file[chain, int(id)]
 
     def get_depth_dict(self):
         return self.depth_file

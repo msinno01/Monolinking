@@ -1,6 +1,6 @@
 class Score:
     def __init__(self,depth_object, exp_list):
-        self.exp_dict = exp_dict
+        self.exp_list = exp_list
         self.depth_object = depth_object
 
     def score_mono(self):

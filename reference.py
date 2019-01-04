@@ -4,7 +4,7 @@ class Reference:
         with open(in_file,'r') as f:
             g = f.read().splitlines()
             for line in g:
-                self.residues.append((line.split('|')[0], line.split('|')[1]))
+                self.residues.append((line.split('|')[1], int(line.split('|')[0])))
 
     def get_residues(self):
-        return self.residues()
+        return self.residues

@@ -9,7 +9,7 @@ class Output:
 
     def print_results(self):
         print("Model\tScore")
-        for model, score in self.models:
+        for model, score in self.models.items():
             print("{0}\t{1}".format(model,score))
 
     def write_results(self,out_option):
@@ -18,8 +18,8 @@ class Output:
 
         with open(out_option,'w+') as f:
             f.write("Model\tScore\n")
-            for model, score in self.models:
-                f.write("{0}\t{1}\m".format(model,score))
+            for model, score in self.models.items():
+                f.write("{0}\t{1}\n".format(model,score))
             f.close()
-            
+
         print("Written to {0}".format(out_option))
