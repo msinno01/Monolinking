@@ -1,7 +1,7 @@
-from depth import Depth
-from reference import Reference
-from score import Score
-from output import Output
+from modules.depth import Depth
+from modules.reference import Reference
+from modules.score import Score
+from modules.output import Output
 import argparse
 import sys
 
