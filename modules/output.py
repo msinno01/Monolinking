@@ -1,4 +1,9 @@
 class Output:
+    '''
+    A class to handle outputting the scoring of different models.
+
+    If no output file specified it will print to the terminal, otherwise it will write to the specified txt file.
+    '''
     def __init__(self, models, out_option):
         self.models = models
 

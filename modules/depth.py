@@ -1,6 +1,13 @@
 import subprocess
 
 class Depth:
+    '''
+    A class to handle the input of a Depth file.
+
+    If no depth file is provided but a pdb file is then the algorithm will run depth first.
+
+    With the resulting Depth file a dictionary is produced, keys are tuples of (chain,id). Values are the depth of the residue in the structure.
+    '''
     def __init__(self, pdb_structure=None, depth_file=None, depth_path=None):
         self.depth_file = self.read_depth(depth_file)
 

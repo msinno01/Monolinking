@@ -1,4 +1,7 @@
 class Score:
+    '''
+    A class to handle scoring of residues from experimental data based on their depth in the structure. 
+    '''
     def __init__(self,depth_object, exp_list):
         self.exp_list = exp_list
         self.depth_object = depth_object
