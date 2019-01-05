@@ -43,6 +43,9 @@ if __name__ == "__main__":
 
     exp_list = Reference(referee).get_residues()
 
+    #obtain models from input and run scoring.
+    #scores collected in models dictionary
+
     models = {}
 
     if pdbs and not depth_files:
