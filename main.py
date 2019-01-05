@@ -51,11 +51,11 @@ if __name__ == "__main__":
     if pdbs and not depth_files:
         for pdb in pdbs:
             depth = Depth(pdb, None,depth_path)
-            models[pdb.split('.')[0]] = Score(depth, exp_list).score_mono()
+            models[pdb.split('.pdb')[0]] = Score(depth, exp_list).score_mono()
     elif depth_files:
         for depth_file in depth_files:
             depth = Depth(None, depth_file, depth_path)
-            models[depth_file.split('-')[0]] = Score(depth, exp_list).score_mono()
+            models[depth_file.split('-residue.depth')[0]] = Score(depth, exp_list).score_mono()
     else:
         print("Please specify pdbs or depth files, use -h flag for help.")
         sys.exit()
